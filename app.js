@@ -68,8 +68,20 @@ async function guardarEstudiante() {
     const carrera = document.getElementById('carrera').value.trim();
     const indice_academico = parseFloat(document.getElementById('indice_academico').value);
 
-    if (!nombre || !matricula || !carrera || isNaN(indice_academico)) {
-        alert('Por favor completa todos los campos');
+    if (!nombre) {
+        alert('El nombre del estudiante es obligatorio');
+        return;
+    }
+    if (!matricula) {
+        alert('La matrícula es obligatoria');
+        return;
+    }
+    if (!carrera) {
+        alert('La carrera es obligatoria');
+        return;
+    }
+    if (isNaN(indice_academico)) {
+        alert('El índice académico es obligatorio');
         return;
     }
 
