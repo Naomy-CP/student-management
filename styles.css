@@ -85,3 +85,18 @@ body {
     font-size: 0.9rem;
     padding: 6px 12px;
 }
+
+/* Estilos para edición de estudiantes */
+#btnGuardar {
+    min-width: 180px;
+    transition: background-color 0.3s;
+}
+
+#btnCancelar {
+    min-width: 120px;
+}
+
+.form-control:disabled {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+}
