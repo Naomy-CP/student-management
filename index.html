@@ -15,6 +15,7 @@
     </nav>
 
     <div class="container mt-4">
+        <!-- Formulario -->
         <div class="card shadow mb-4" id="form-section">
             <div class="card-header bg-primary text-white">
                 <h5 class="mb-0">Agregar Estudiante</h5>
@@ -23,35 +24,19 @@
                 <div class="row g-3">
                     <div class="col-md-6">
                         <label class="form-label">Nombre completo</label>
-<<<<<<< HEAD
-                        <input type="text" class="form-control" id="nombre" 
+                        <input type="text" class="form-control" id="nombre">
                     </div>
                     <div class="col-md-6">
                         <label class="form-label">Matrícula</label>
-                        <input type="text" class="form-control" id="matricula" 
+                        <input type="text" class="form-control" id="matricula">
                     </div>
                     <div class="col-md-6">
                         <label class="form-label">Carrera</label>
-                        <input type="text" class="form-control" id="carrera" 
+                        <input type="text" class="form-control" id="carrera">
                     </div>
                     <div class="col-md-6">
                         <label class="form-label">Índice Académico</label>
-                        <input type="number" class="form-control" id="indice_academico" 
-=======
-                        <input type="text" class="form-control" id="nombre" placeholder="Ej: María García">
-                    </div>
-                    <div class="col-md-6">
-                        <label class="form-label">Matrícula</label>
-                        <input type="text" class="form-control" id="matricula" placeholder="Ej: 2024-0001">
-                    </div>
-                    <div class="col-md-6">
-                        <label class="form-label">Carrera</label>
-                        <input type="text" class="form-control" id="carrera" placeholder="Ej: Ingeniería en Sistemas">
-                    </div>
-                    <div class="col-md-6">
-                        <label class="form-label">Índice Académico</label>
-                        <input type="number" class="form-control" id="indice_academico" placeholder="Ej: 3.75" min="0" max="4" step="0.01">
->>>>>>> 6e909ec4d7b23ff4e63d08e4135190a1de925bf6
+                        <input type="number" class="form-control" id="indice_academico" min="0" max="4" step="0.01">
                     </div>
                     <div class="col-12">
                         <button class="btn btn-primary" id="btnGuardar" onclick="guardarEstudiante()">
@@ -65,22 +50,23 @@
             </div>
         </div>
 
-        <!-- Buscador -->
+        
         <div class="card shadow mb-4" id="search-section">
             <div class="card-header bg-secondary text-white">
-                <h5 class="mb-0">Buscar Estudiante</h5>
+                <h5 class="mb-0">🔍 Buscar Estudiante</h5>
             </div>
             <div class="card-body">
                 <div class="input-group">
-            <span class="input-group-text">🔍</span>
-            <input type="text" class="form-control" id="busqueda" placeholder="Buscar por nombre o matrícula..." oninput="buscarEstudiante()">
-            <button class="btn btn-outline-secondary" onclick="cargarEstudiantes()">Limpiar búsqueda
-        </button>
-        </div>
+                    <span class="input-group-text"></span>
+                    <input type="text" class="form-control" id="busqueda" placeholder="Buscar por nombre o matrícula..." oninput="buscarEstudiante()">
+                    <button class="btn btn-outline-secondary" onclick="cargarEstudiantes()">
+                        Limpiar búsqueda
+                    </button>
+                </div>
             </div>
         </div>
 
-        <!-- Lista de Estudiantes -->
+        
         <div class="card shadow" id="list-section">
             <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
                 <h5 class="mb-0">Lista de Estudiantes</h5>
