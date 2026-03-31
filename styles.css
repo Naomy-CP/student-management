@@ -72,3 +72,16 @@ body {
     transform: translateY(0px);
     box-shadow: none;
 }
+
+#list-section {
+    margin-bottom: 2rem;
+}
+
+#list-section .table {
+    font-size: 0.95rem;
+}
+
+#contador {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+}
