@@ -1,4 +1,3 @@
-// Configuración de Supabase
 const SUPABASE_URL = 'https://wvqamltlzuscntvnqamc.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind2cWFtbHRsenVzY250dm5xYW1jIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ4MzY0MjUsImV4cCI6MjA5MDQxMjQyNX0.JOt9xNzoW19292gi8O07fQqqhOGnyKHiHQNF7k4LsSs';
 
@@ -7,12 +6,10 @@ const db = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 let editandoId = null;
 
-// Cargar estudiantes al iniciar
 window.onload = () => {
     cargarEstudiantes();
 };
 
-// LEER - Cargar todos los estudiantes
 async function cargarEstudiantes() {
     document.getElementById('busqueda').value = '';
     const { data, error } = await db
@@ -27,7 +24,6 @@ async function cargarEstudiantes() {
     mostrarEstudiantes(data);
 }
 
-// Mostrar estudiantes en la tabla
 function mostrarEstudiantes(estudiantes) {
     const tbody = document.getElementById('tablaEstudiantes');
     const contador = document.getElementById('contador');
@@ -56,17 +52,16 @@ function mostrarEstudiantes(estudiantes) {
             </td>
             <td>
                 <button class="btn btn-sm btn-warning me-1" onclick="editarEstudiante(${est.id}, '${est.nombre}', '${est.matricula}', '${est.carrera}', ${est.indice_academico})">
-                    ✏️ Editar
+                     Editar
                 </button>
                 <button class="btn btn-sm btn-danger" onclick="eliminarEstudiante(${est.id})">
-                    🗑️ Eliminar
+                     Eliminar
                 </button>
             </td>
         </tr>
     `).join('');
 }
 
-// CREAR - Guardar estudiante
 async function guardarEstudiante() {
     const nombre = document.getElementById('nombre').value.trim();
     const matricula = document.getElementById('matricula').value.trim();
@@ -86,16 +81,16 @@ async function guardarEstudiante() {
             .eq('id', editandoId);
 
         if (error) { alert('Error al actualizar'); return; }
-        alert('✅ Estudiante actualizado correctamente');
+        alert('Estudiante actualizado correctamente');
         cancelarEdicion();
     } else {
-        // INSERTAR
+        
         const { error } = await db
             .from('students')
             .insert([{ nombre, matricula, carrera, indice_academico }]);
 
         if (error) { alert('Error al guardar'); return; }
-        alert('✅ Estudiante guardado correctamente');
+        alert('Estudiante guardado correctamente');
     }
 
     limpiarFormulario();
@@ -109,12 +104,11 @@ function editarEstudiante(id, nombre, matricula, carrera, indice_academico) {
     document.getElementById('matricula').value = matricula;
     document.getElementById('carrera').value = carrera;
     document.getElementById('indice_academico').value = indice_academico;
-    document.getElementById('btnGuardar').textContent = '💾 Actualizar Estudiante';
+    document.getElementById('btnGuardar').textContent = 'Actualizar Estudiante';
     document.getElementById('btnCancelar').classList.remove('d-none');
     window.scrollTo(0, 0);
 }
 
-// Cancelar edición
 function cancelarEdicion() {
     editandoId = null;
     limpiarFormulario();
@@ -122,7 +116,6 @@ function cancelarEdicion() {
     document.getElementById('btnCancelar').classList.add('d-none');
 }
 
-// ELIMINAR - Eliminar estudiante
 async function eliminarEstudiante(id) {
     if (!confirm('¿Estás seguro que deseas eliminar este estudiante?')) return;
 
@@ -132,11 +125,10 @@ async function eliminarEstudiante(id) {
         .eq('id', id);
 
     if (error) { alert('Error al eliminar'); return; }
-    alert('✅ Estudiante eliminado correctamente');
+    alert('Estudiante eliminado correctamente');
     cargarEstudiantes();
 }
 
-// BUSCAR - Filtrar estudiantes
 async function buscarEstudiante() {
     const texto = document.getElementById('busqueda').value.trim();
 
@@ -154,7 +146,6 @@ async function buscarEstudiante() {
     mostrarEstudiantes(data);
 }
 
-// Limpiar formulario
 function limpiarFormulario() {
     document.getElementById('nombre').value = '';
     document.getElementById('matricula').value = '';
