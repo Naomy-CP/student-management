@@ -100,3 +100,23 @@ body {
     background-color: #e9ecef;
     cursor: not-allowed;
 }
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #bb2d3b;
+    border-color: #b02a37;
+}
+
+.table tbody tr:hover .btn-danger {
+    opacity: 1;
+}
+
+.modal-confirm .modal-header {
+    background-color: #dc3545;
+    color: white;
+    border-radius: 8px 8px 0 0;
+}
