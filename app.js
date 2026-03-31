@@ -84,6 +84,10 @@ async function guardarEstudiante() {
         alert('El índice académico es obligatorio');
         return;
     }
+    if (indice_academico < 0 || indice_academico > 4) {
+        alert('El índice académico debe estar entre 0.00 y 4.00');
+        return;
+    }
 
     if (editandoId) {
         // ACTUALIZAR
