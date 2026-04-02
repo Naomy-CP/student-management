@@ -121,11 +121,22 @@ body {
     border-radius: 8px 8px 0 0;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+}
+
 #login-section {
     min-height: 100vh;
     background: linear-gradient(135deg, #1a1a6e, #6a0dad, #e91e8c);
     display: flex;
     align-items: center;
+    justify-content: center;
     margin-top: 0 !important;
     padding: 20px;
+}
+
+#login-section .card {
+    width: 100%;
+    max-width: 400px;
 }
