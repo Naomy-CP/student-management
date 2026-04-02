@@ -1,3 +1,28 @@
+const USUARIO_VALIDO = 'admin';
+const PASSWORD_VALIDO = 'admin123';
+
+function iniciarSesion() {
+    const usuario = document.getElementById('loginUsuario').value.trim();
+    const password = document.getElementById('loginPassword').value.trim();
+
+    if (usuario === USUARIO_VALIDO && password === PASSWORD_VALIDO) {
+        document.getElementById('login-section').classList.add('d-none');
+        document.getElementById('main-section').classList.remove('d-none');
+        document.getElementById('loginError').classList.add('d-none');
+        cargarEstudiantes();
+    } else {
+        document.getElementById('loginError').classList.remove('d-none');
+    }
+}
+
+function cerrarSesion() {
+    document.getElementById('login-section').classList.remove('d-none');
+    document.getElementById('main-section').classList.add('d-none');
+    document.getElementById('loginUsuario').value = '';
+    document.getElementById('loginPassword').value = '';
+}
+
+
 const SUPABASE_URL = 'https://wvqamltlzuscntvnqamc.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind2cWFtbHRsenVzY250dm5xYW1jIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ4MzY0MjUsImV4cCI6MjA5MDQxMjQyNX0.JOt9xNzoW19292gi8O07fQqqhOGnyKHiHQNF7k4LsSs';
 
