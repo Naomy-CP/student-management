@@ -4,7 +4,7 @@
   "description": "Sistema CRUD de Gestión de Estudiantes",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha tests/estudiantes.test.js --reporter mochawesome --reporter-options reportDir=reporte,reportFilename=reporte"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Naomy-CP/student-management#readme",
   "dependencies": {
+    "chromedriver": "^146.0.6",
     "mocha": "^11.7.5",
     "mochawesome": "^7.1.4",
     "selenium-webdriver": "^4.41.0"
