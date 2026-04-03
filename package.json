@@ -1,0 +1,26 @@
+{
+  "name": "student-management",
+  "version": "1.0.0",
+  "description": "Sistema CRUD de Gestión de Estudiantes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Naomy-CP/student-management.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Naomy-CP/student-management/issues"
+  },
+  "homepage": "https://github.com/Naomy-CP/student-management#readme",
+  "dependencies": {
+    "mocha": "^11.7.5",
+    "mochawesome": "^7.1.4",
+    "selenium-webdriver": "^4.41.0"
+  }
+}
